@@ -49,4 +49,7 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
+## this is annoying
+lazy-lock.json
+
 # End of https://www.toptal.com/developers/gitignore/api/macos,linux
