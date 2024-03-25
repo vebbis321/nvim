@@ -17,6 +17,9 @@ vim.api.nvim_create_autocmd("filetype", {
 	end,
 })
 
+-- increment nums with ctrl + g
+keymap.set("n", "<C-g>", "<C-a>")
+
 -- jump to previous file
 keymap.set("n", "<C-b>", "<C-^>")
 
