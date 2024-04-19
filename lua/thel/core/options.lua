@@ -49,6 +49,3 @@ opt.virtualedit = "block"
 opt.ignorecase = true
 opt.spell = true
 opt.spelllang = { "en_us" }
-
--- obsidian
-opt.conceallevel = 2
