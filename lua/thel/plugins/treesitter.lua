@@ -28,7 +28,6 @@ return {
 				"typescript",
 				"javascript",
 				"swift",
-				"objc",
 				"lua",
 				"markdown",
 				"markdown_inline",
