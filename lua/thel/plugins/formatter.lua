@@ -15,7 +15,7 @@ return {
 				swift = { "swiftformat", "swift_format" },
 				json = { "prettier" },
 				yaml = { "prettier" },
-				markdown = { "prettier" },
+				-- markdown = { "prettier" },
 				lua = { "stylua" },
 			},
 			format_on_save = {
