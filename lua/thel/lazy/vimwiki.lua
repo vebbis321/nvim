@@ -16,15 +16,15 @@ return {
 			},
 		}
 
-		-- main wiki
+		-- notes
 		local main_wiki = vim.deepcopy(wiki_default)
-		main_wiki.name = "wiki"
-		main_wiki.path = "~/Documents/vimwiki/"
+		main_wiki.name = "notes"
+		main_wiki.path = "~/notes/"
 
 		-- deez nutz
 		local thel = vim.deepcopy(wiki_default)
-		thel.name = "thel"
-		thel.path = "~/Documents/thel/"
+		thel.name = "productivity"
+		thel.path = "~/productivity/"
 
 		vim.g.vimwiki_list = { main_wiki, thel }
 		vim.g.vimwiki_ext2syntax = {
@@ -42,8 +42,8 @@ return {
 		keymap.set("n", "<C-Space>", "<Plug>VimwikiToggleListItem<CR>0")
 
 		-- YESSSSS
-		keymap.set("n", "<leader>fw", function()
-			require("telescope.builtin").find_files({ cwd = "~/Documents/vimwiki", prompt_title = "vimwiki" })
+		keymap.set("n", "<leader>fn", function()
+			require("telescope.builtin").find_files({ cwd = "~/notes/", prompt_title = "notes" })
 		end)
 	end,
 }
