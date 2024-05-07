@@ -39,7 +39,7 @@ return {
 		vim.g.vimwiki_markdown_link_ext = 1 -- add markdown file extension when generating links
 
 		local keymap = vim.keymap
-		keymap.set("n", "<C-Space>", "<Plug>VimwikiToggleListItem<CR>j0")
+		keymap.set("n", "<C-Space>", "<Plug>VimwikiToggleListItem<CR>0")
 
 		-- YESSSSS
 		keymap.set("n", "<leader>fw", function()

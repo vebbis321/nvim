@@ -12,21 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{
-		import = "thel.plugins",
-		cond = vim.g.vscode == nil,
-	},
-
-	{
-		import = "thel.plugins.vscode",
-		cond = vim.g.vscode ~= nil,
-	},
-
-	{
-		import = "thel.plugins.lsp",
-		cond = vim.g.vscode == nil,
-	},
-}, {
+	spec = "thel.lazy",
 	install = {
 		colorscheme = { "kanagawa" },
 	},

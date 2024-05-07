@@ -56,13 +56,6 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		-- configure sourcekit-lsp  server
-		--lspconfig["sourcekit"].setup({
-		--cmd = { "sourcekit-lsp" },
-		--filetypes = { "swift", "c", "cpp", "objective-c", "objective-cpp" },
-		--root_dir = lspconfig.util.root_pattern("Package.swift", ".git"),
-		--})
-
 		lspconfig["clangd"].setup({
 			on_attach = on_attach,
 			capabilities = cmp_nvim_lsp.default_capabilities(),
@@ -70,24 +63,6 @@ return {
 				"clangd",
 				"--offset-encoding=utf-16",
 			},
-		})
-
-		-- configure html server
-		lspconfig["html"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure css server
-		lspconfig["cssls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure typescript server with plugin
-		lspconfig["tsserver"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
 		})
 
 		-- configure python server

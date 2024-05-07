@@ -27,7 +27,6 @@ return {
 				"css",
 				"typescript",
 				"javascript",
-				"swift",
 				"lua",
 				"markdown",
 				"markdown_inline",

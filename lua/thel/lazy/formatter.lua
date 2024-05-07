@@ -12,7 +12,6 @@ return {
 				typescript = { "prettier" },
 				html = { "prettier" },
 				css = { "prettier" },
-				swift = { "swiftformat", "swift_format" },
 				json = { "prettier" },
 				yaml = { "prettier" },
 				-- markdown = { "prettier" },

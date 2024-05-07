@@ -1,2 +1,1 @@
-require("thel.core")
-require("thel.lazy")
+require("thel")
