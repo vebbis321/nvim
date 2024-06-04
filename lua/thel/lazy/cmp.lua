@@ -54,6 +54,7 @@ return {
 						enable_in_context = function()
 							return true
 						end,
+						preselect_correct_word = true,
 					},
 				},
 			}),
