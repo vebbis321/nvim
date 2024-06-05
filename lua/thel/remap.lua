@@ -15,7 +15,7 @@ opt.smartindent = true
 opt.wrap = false
 
 -- search settings
-opt.hlsearch = false
+opt.hlsearch = true
 opt.incsearch = true
 opt.inccommand = "split"
 
