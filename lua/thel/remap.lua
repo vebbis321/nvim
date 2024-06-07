@@ -1,51 +1,76 @@
-local opt = vim.opt -- conciseness
+vim.g.mapleader = " "
 
--- line numbers
-opt.relativenumber = true
-opt.number = true
+local keymap = vim.keymap -- for conciseness
 
--- tabs and indent
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.softtabstop = 4
-opt.expandtab = true
-opt.smartindent = true
+-- back to netrw
+keymap.set("n", "<leader>jf", vim.cmd.Ex)
+-- Netrw stuff
+vim.api.nvim_create_autocmd("filetype", {
+	pattern = "netrw",
+	desc = "Better mappings for netrw",
+	callback = function()
+		local bind = function(lhs, rhs)
+			vim.keymap.set("n", lhs, rhs, { remap = true, buffer = true })
+		end
 
--- line wrapping
-opt.wrap = false
+		bind("<c-l>", ":TmuxNavigateRight<cr>")
+	end,
+})
 
--- search settings
-opt.hlsearch = true
-opt.incsearch = true
-opt.inccommand = "split"
+-- increment nums with ctrl + g
+keymap.set("n", "<C-g>", "<C-a>")
 
--- split windows
-opt.splitright = true -- split vertical window to the right
-opt.splitbelow = true -- split horizontal window to the bottom
+-- jump to previous file
+keymap.set("n", "<C-b>", "<C-^>")
 
--- backing
-opt.swapfile = false
-opt.backup = false
-opt.undofile = true
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+-- let cursor stay in place after paste
+keymap.set("n", "J", "mzJ`z")
 
--- backspace
-opt.backspace = "indent,eol,start"
+-- let cursor stay in the middle when jumping half-pages
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
 
--- appearance
-opt.termguicolors = true
-opt.signcolumn = "yes"
-opt.colorcolumn = "100"
-opt.textwidth = 98
-opt.cursorline = true
-opt.background = "dark"
+-- let cursor stay in the middle when searching
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")
 
-opt.scrolloff = 999
-opt.isfname:append("@-@")
-opt.updatetime = 50
+-- move blocks of code
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+--
+-- save
+keymap.set("n", "<c-s>", ":w<CR>") -- normal mode
+keymap.set("i", "<c-s>", "<ESC>:w<CR>l") -- insert mode
+keymap.set("v", "<c-s>", "<ESC>:w<CR>") -- normal mode
 
--- nois
-opt.virtualedit = "block"
-opt.ignorecase = true
-opt.spell = true
-opt.spelllang = { "en_us" }
+-- greatest remap ever
+-- foo bar
+keymap.set("x", "<leader>p", [["_dP]])
+
+-- yank into buffer
+keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+keymap.set("n", "<leader>Y", [["+Y]])
+
+keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+
+-- delete to void register
+keymap.set("n", "<leader>d", '"_d')
+keymap.set("v", "<leader>d", '"_d')
+
+-- nope
+keymap.set("n", "Q", "<nop>")
+
+-- switch projects
+keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
+keymap.set("n", "<leader>cs", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- swift
+keymap.set("n", "<leader>xb", ":!swift build<CR>")
+keymap.set("n", "<leader>xr", ":!swift run<CR>")
+
+-- lazy
+keymap.set("n", "<leader>lz", ":Lazy<CR>")
+-- mason
+keymap.set("n", "<leader>ms", ":Mason<CR>")
