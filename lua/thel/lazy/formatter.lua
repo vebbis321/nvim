@@ -7,7 +7,7 @@ return {
 		conform.setup({
 			formatters_by_ft = {
 				c = { "clang-format" },
-				python = { "isort", "black" },
+				python = { "isort", "ruff" },
 				javascript = { "prettier" },
 				typescript = { "prettier" },
 				html = { "prettier" },

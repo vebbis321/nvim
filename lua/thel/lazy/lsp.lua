@@ -43,6 +43,11 @@ return {
 
 			opts.desc = "Restart LSP"
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+			if client.name == "ruff_lsp" then
+				-- Disable hover in favor of Pyright
+				client.server_capabilities.hoverProvider = false
+			end
 		end
 
 		-- used to enable autocompletion (assign to every lsp server config)
@@ -65,10 +70,31 @@ return {
 			},
 		})
 
-		-- configure python server
+		lspconfig.ruff_lsp.setup({
+			on_attach = on_attach,
+			init_options = {
+				settings = {
+					-- Any extra CLI arguments for `ruff` go here.
+					args = {},
+				},
+			},
+		})
+
 		lspconfig["pyright"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			settings = {
+				pyright = {
+					-- Using Ruff's import organizer
+					disableOrganizeImports = true,
+				},
+				python = {
+					analysis = {
+						-- Ignore all files for analysis to exclusively use Ruff for linting
+						ignore = { "*" },
+					},
+				},
+			},
 		})
 
 		lspconfig["ltex"].setup({

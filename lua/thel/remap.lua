@@ -53,10 +53,6 @@ keymap.set("n", "<leader>Y", [["+Y]])
 
 keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
--- delete to void register
-keymap.set("n", "<leader>d", '"_d')
-keymap.set("v", "<leader>d", '"_d')
-
 -- nope
 keymap.set("n", "Q", "<nop>")
 
