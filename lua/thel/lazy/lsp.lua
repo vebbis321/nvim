@@ -18,6 +18,7 @@ return {
 		local keymap = vim.keymap -- for conciseness
 
 		local opts = { noremap = true, silent = true }
+
 		local on_attach = function(client, bufnr)
 			opts.buffer = bufnr
 
@@ -25,20 +26,33 @@ return {
 			keymap.set("n", "gd", function()
 				vim.lsp.buf.definition()
 			end, opts)
+
+			keymap.set("n", "gr", function()
+				vim.lsp.buf.references()
+			end)
+
 			keymap.set("n", "K", function()
 				vim.lsp.buf.hover()
 			end, opts)
+
 			keymap.set("n", "<leader>vd", function()
 				vim.diagnostic.open_float()
 			end, opts)
+
 			keymap.set("n", "[d", function()
 				vim.diagnostic.goto_next()
 			end, opts)
+
 			keymap.set("n", "]d", function()
 				vim.diagnostic.goto_prev()
 			end, opts)
-			keymap.set("n", "<leader>vca", function()
+
+			keymap.set("n", "<leader>va", function()
 				vim.lsp.buf.code_action()
+			end, opts)
+
+			keymap.set("n", "<leader>rn", function()
+				vim.lsp.buf.rename()
 			end, opts)
 
 			opts.desc = "Restart LSP"
