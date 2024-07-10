@@ -47,5 +47,18 @@ return {
 		keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
 		keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
 		keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
+
+		-- YESSSSS
+		keymap.set("n", "<leader>fn", function()
+			require("telescope.builtin").find_files({ cwd = "~/notes/", prompt_title = "notes" })
+		end)
+
+		keymap.set("n", "<leader>fr", function()
+			require("telescope.builtin").find_files({ cwd = "~/repos/", prompt_title = "repos" })
+		end)
+
+		keymap.set("n", "<leader>fc", function()
+			require("telescope.builtin").find_files({ cwd = "~/code/", prompt_title = "code" })
+		end)
 	end,
 }

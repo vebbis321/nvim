@@ -40,10 +40,5 @@ return {
 
 		local keymap = vim.keymap
 		keymap.set("n", "<C-Space>", "<Plug>VimwikiToggleListItem<CR>0")
-
-		-- YESSSSS
-		keymap.set("n", "<leader>fn", function()
-			require("telescope.builtin").find_files({ cwd = "~/notes/", prompt_title = "notes" })
-		end)
 	end,
 }
