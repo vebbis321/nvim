@@ -38,10 +38,6 @@ keymap.set("n", "N", "Nzzzv")
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 --
--- save
-keymap.set("n", "<c-w>", ":w<CR>") -- normal mode
-keymap.set("i", "<c-w>", "<ESC>:w<CR>l") -- insert mode
-keymap.set("v", "<c-w>", "<ESC>:w<CR>") -- normal mode
 
 -- greatest remap ever
 -- foo bar
