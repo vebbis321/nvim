@@ -13,9 +13,14 @@ vim.api.nvim_create_autocmd("filetype", {
 			vim.keymap.set("n", lhs, rhs, { remap = true, buffer = true })
 		end
 
-		bind("<c-l>", ":TmuxNavigateRight<cr>")
+		bind("<M-l>", ":TmuxNavigateRight<cr>")
 	end,
 })
+
+-- keymap.set("n", "<M-h>", ":TmuxNavigateLeft<cr>")
+-- keymap.set("n", "<M-j>", ":TmuxNavigateDown<cr>")
+-- keymap.set("n", "<M-k>", ":TmuxNavigateUpt<cr>")
+-- keymap.set("n", "<M-l>", ":TmuxNavigateLeft<cr>")
 
 -- increment nums with ctrl + g
 keymap.set("n", "<C-g>", "<C-a>")

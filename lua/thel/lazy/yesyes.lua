@@ -3,24 +3,23 @@ return {
 	"nvim-lua/plenary.nvim",
 
 	-- tmux nav
-	"christoomey/vim-tmux-navigator",
-	cmd = {
-		"TmuxNavigateLeft",
-		"TmuxNavigateDown",
-		"TmuxNavigateUp",
-		"TmuxNavigateRight",
-		"TmuxNavigatePrevious",
-	},
-	keys = {
-		{ "<m-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-		{ "<m-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-		{ "<m-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-		{ "<m-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+	{
+		"christoomey/vim-tmux-navigator",
+		cmd = {
+			"TmuxNavigateLeft",
+			"TmuxNavigateDown",
+			"TmuxNavigateUp",
+			"TmuxNavigateRight",
+		},
+		tmux_navigator_no_mappings = 1,
+		keys = {
+			{ "<m-h>", "<cmd>TmuxNavigateLeft<cr>" },
+			{ "<m-j>", "<cmd>TmuxNavigateDown<cr>" },
+			{ "<m-k>", "<cmd>TmuxNavigateUp<cr>" },
+			{ "<m-l>", "<cmd>TmuxNavigateRight<cr>" },
+		},
 	},
 
 	-- colors to hex/rgb
-	"NvChad/nvim-colorizer.lua",
-	event = "BufReadPre",
-	opts = { -- set to setup table
-	},
+	{ "NvChad/nvim-colorizer.lua", event = "BufReadPre" },
 }
