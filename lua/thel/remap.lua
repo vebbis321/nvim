@@ -17,14 +17,6 @@ vim.api.nvim_create_autocmd("filetype", {
 	end,
 })
 
--- keymap.set("n", "<M-h>", ":TmuxNavigateLeft<cr>")
--- keymap.set("n", "<M-j>", ":TmuxNavigateDown<cr>")
--- keymap.set("n", "<M-k>", ":TmuxNavigateUpt<cr>")
--- keymap.set("n", "<M-l>", ":TmuxNavigateLeft<cr>")
-
--- increment nums with ctrl + g
-keymap.set("n", "<C-g>", "<C-a>")
-
 -- jump to previous file
 keymap.set("n", "<C-b>", "<C-^>")
 
@@ -42,7 +34,6 @@ keymap.set("n", "N", "Nzzzv")
 -- move blocks of code
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
---
 
 -- greatest remap ever
 -- foo bar
@@ -59,13 +50,7 @@ keymap.set("n", "Q", "<nop>")
 
 -- switch projects
 keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-keymap.set("n", "<leader>f", vim.lsp.buf.format)
-
 keymap.set("n", "<leader>cs", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
--- swift
-keymap.set("n", "<leader>xb", ":!swift build<CR>")
-keymap.set("n", "<leader>xr", ":!swift run<CR>")
 
 -- lazy
 keymap.set("n", "<leader>lz", ":Lazy<CR>")
