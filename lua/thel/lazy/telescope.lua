@@ -50,7 +50,7 @@ return {
 
 		-- YESSSSS
 		keymap.set("n", "<leader>fn", function()
-			require("telescope.builtin").find_files({ cwd = "~/notes/", prompt_title = "notes" })
+			require("telescope.builtin").find_files({ cwd = "~/wiki/notes/", prompt_title = "notes" })
 		end)
 
 		keymap.set("n", "<leader>fr", function()

@@ -1,11 +1,25 @@
 return {
 	"danymat/neogen",
-	dependencies = "nvim-treesitter/nvim-treesitter",
-	config = {
-		snippet_engine = "luasnip",
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter",
+		"L3MON4D3/LuaSnip",
 	},
-	init = function()
-		local opts = { noremap = true, silent = true }
-		vim.api.nvim_set_keymap("n", "<Leader>ng", ":lua require('neogen').generate()<CR>", opts)
+	config = function()
+		local neogen = require("neogen")
+
+		neogen.setup({
+			snippet_engine = "luasnip",
+			languages = {
+				python = {
+					template = {
+						annotation_convention = "numpydoc",
+					},
+				},
+			},
+		})
+
+		vim.keymap.set("n", "<leader>ng", function()
+			neogen.generate()
+		end)
 	end,
 }

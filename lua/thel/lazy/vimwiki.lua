@@ -18,15 +18,15 @@ return {
 
 		-- notes
 		local main_wiki = vim.deepcopy(wiki_default)
-		main_wiki.name = "notes"
-		main_wiki.path = "~/notes/"
+		main_wiki.name = "wiki"
+		main_wiki.path = "~/wiki/"
 
 		-- deez nutz
-		local thel = vim.deepcopy(wiki_default)
-		thel.name = "productivity"
-		thel.path = "~/productivity/"
+		-- local thel = vim.deepcopy(wiki_default)
+		-- thel.name = "productivity"
+		-- thel.path = "~/productivity/"
 
-		vim.g.vimwiki_list = { main_wiki, thel }
+		vim.g.vimwiki_list = { main_wiki }
 		vim.g.vimwiki_ext2syntax = {
 			[".md"] = "markdown",
 			[".markdown"] = "markdown",
