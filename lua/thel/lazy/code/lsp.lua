@@ -14,11 +14,8 @@ return {
 
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
 		local keymap = vim.keymap -- for conciseness
-
 		local opts = { noremap = true, silent = true }
-
 		local on_attach = function(client, bufnr)
 			opts.buffer = bufnr
 
