@@ -9,6 +9,7 @@ return {
 				["c"] = "c",
 				["rust"] = "rust",
 				["python"] = "python",
+				["lua"] = "lua",
 				["js"] = "js",
 				["bash"] = "bash",
 				["c++"] = "cpp",
