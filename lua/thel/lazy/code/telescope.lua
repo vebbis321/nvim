@@ -49,8 +49,8 @@ return {
 		keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
 
 		-- YESSSSS
-		keymap.set("n", "<leader>fn", function()
-			require("telescope.builtin").find_files({ cwd = "~/wiki/notes/", prompt_title = "notes" })
+		keymap.set("n", "<leader>fw", function()
+			require("telescope.builtin").find_files({ cwd = "~/wiki/", prompt_title = "wiki" })
 		end)
 
 		keymap.set("n", "<leader>fr", function()
